@@ -1,15 +1,9 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(digestible)
 
-project(Digestible VERSION 1.0 LANGUAGES CXX)
+find_package(autoware_cmake REQUIRED)
+autoware_package()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wextra -Wpedantic -Wshadow -fstack-protector-strong")
+install(DIRECTORY include/ DESTINATION include)
 
-# Only do this stuff if we're the top-level project
-# and not included via add_subdirectory()
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-
-  set(CMAKE_CXX_EXTENSIONS OFF)
-
-endif()
-
-add_subdirectory(utility)
+ament_auto_package()
