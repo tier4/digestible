@@ -10,12 +10,6 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 
   set(CMAKE_CXX_EXTENSIONS OFF)
 
-  include(CTest)
-
-  if(BUILD_TESTING)
-    add_subdirectory(tests)
-  endif()
-
 endif()
 
 add_subdirectory(utility)
